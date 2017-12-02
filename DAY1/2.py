@@ -5,6 +5,7 @@ only include a digit in your sum if the digit 10/2 = 5 steps forward matches it.
 Fortunately, your list has an even number of elements.
 """
 
+
 def sum_expected_digits(path):
     try:
         with open(path, 'r') as file:
@@ -16,7 +17,7 @@ def sum_expected_digits(path):
                 index_to_compare = (index+steps_forward_to_compare)%digits_len
                 if digit == digits[index_to_compare]:
                     digits_to_summary.append(digit)
-    except EOFError as err:
+    except FileNotFoundError as err:
         exit(err)
     return sum(digits_to_summary)
 
