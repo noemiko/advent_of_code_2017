@@ -8,8 +8,7 @@ Fortunately, your list has an even number of elements.
 def sum_expected_digits(path):
     try:
         with open(path, 'r') as file:
-            digits = list(file.read())
-            digits = list(map(int, digits))
+            digits = list(map(int, file.read()))
             digits_to_summary = []
             digits_len = len(digits)
             steps_forward_to_compare = (digits_len//2)
